@@ -1,8 +1,13 @@
+body {
+    background-color: grey;
+}
+
 h2 {
+    color: rgba(255, 255, 255, 0.562);
     position: relative;
-    top: 35px;
-    left: 25px;
-    font-size: 60px;
+    top: 10px;
+    left: 40px;
+    font-size: 50px;
 }   
 
 .container {
@@ -23,6 +28,37 @@ h2 {
     top:  -340px;
     box-shadow: 0px 0px 20px 5px black;
     color: rgba(255, 255, 255, 0.651);
+}
+
+#start {
+    position: relative;
+    left: 40px;
+    top: -25px;
+    background-color: rgb(119, 119, 119);
+    border: none;
+}
+/*
+.game-sticker {
+    background-color: rgb(179, 179, 179);
+    width: 220px;
+    height: 220px;
+    border-radius: 120px;
+    position: relative;
+    top: -25px;
+    left: 15px;
+}
+*/
+.game-score {
+    width: 50px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 30px;
+    top: -20px;
+    background-color: rgb(122, 132, 133);
+    border: 3px solid rgb(37, 42, 43);
+    text-align: right;
 }
 
 .game-btn {

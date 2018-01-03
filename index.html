@@ -8,8 +8,6 @@
     <title>Simon game</title>
 </head>
     <body>
-        <button id='start'>start</button>
-        <button id='respond'>respond</button>
         <div class="container">
             <div class='game-btn game-btn-1' data-val='1'>
                 
@@ -25,8 +23,16 @@
             </div>
 
             <div class="game-case">
-                <spam><h2>SIMON</h2></spam>
+                <div class='game-sticker'>
+                    <spam><h2>SIMON</h2></spam>
+                    <input class='game-score' value='' type='text' readonly=true>
+                    <button id='start'>start</button>
+                    <label>Strict mode</label>
+                    <input id='strict' type='checkbox' name='strict'>
+                </div>
             </div>
+
+            
 
         </div>
 
