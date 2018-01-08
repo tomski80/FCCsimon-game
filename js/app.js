@@ -201,7 +201,6 @@ app.game = {
                 that.playSequence();
             },1500);
         }
-        
     },
 
     gameWin : function(){
