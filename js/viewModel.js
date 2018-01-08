@@ -22,6 +22,10 @@ app.viewModel = {
         }
     },
 
+    resetCounter : function(){
+        this.counter('1');
+    },
+
     toggleOnOff : function(){
         this.deviceOn(!this.deviceOn());
     },
@@ -58,6 +62,7 @@ app.viewModel = {
         counter = +app.viewModel.counter();
         counter++;
         app.viewModel.counter(counter);
+        app.game.speedUp();
     }
 };
 

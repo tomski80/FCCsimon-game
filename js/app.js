@@ -9,9 +9,18 @@ app.game = {
     prevTime : Date.now(),
     interval : undefined,
     correctSeqTimeout : undefined,
+    speed : { lightOn : 650, lightOff : 150},
 
-    addGameColor : function(){
-        this.compSequence.push(app.helper.randomColor());
+    addGameColor : function addGameColor(){
+        var len = this.compSequence.length,
+            color = app.helper.randomColor();
+        if( len > 1){
+            if( (this.compSequence[len-1] === color) && (this.compSequence[len-2] === color) ){
+                addGameColor.call(app.game);
+                return;
+            }
+        }
+        this.compSequence.push(color);
     },
 
     storePlayerColor : function(color){
@@ -44,6 +53,22 @@ app.game = {
         this.resetTimer();
     },
 
+    speedUp : function (){
+        var counter;
+        counter = +app.viewModel.counter();
+        if(counter === 5){
+            this.speed.lightOn = 500;
+            this.speed.lightOff = 125;
+        }
+        if(counter === 9){
+            this.speed.lightOn = 400;
+            this.speed.lightOff = 100;
+        }
+        if(counter === 13){
+            this.speed.lightOn = 370;
+            this.speed.lightOff = 85;
+        }
+    },
     // play sequence stored in compSequence array 
     // for each element we set timout function to switch lights ON 
     // invoked in intervals (timeout = interval * index)
@@ -55,8 +80,8 @@ app.game = {
             timeout,
             that = this;
 
-        lightOnTime = 1000;
-        breakTime = 250;
+        lightOnTime = this.speed.lightOn;
+        breakTime = this.speed.lightOff;
         intervals = (lightOnTime+breakTime);
 
         //play color sequence 
@@ -146,6 +171,7 @@ app.game = {
         if(app.viewModel.playerTurn()){
             if(app.viewModel.strict()){
                 //strict
+                this.start();
             }else{
                 tempCounter = +app.viewModel.counter();
                 app.viewModel.counter('!!!!');
@@ -169,6 +195,7 @@ app.game = {
         this.playerSequence = [];
         this.stopSequence();
         this.resetTimer();
+        app.viewModel.resetCounter();
         window.clearInterval(this.interval);
     },
 

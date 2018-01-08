@@ -11,7 +11,7 @@ h2 {
 }   
 
 .container {
-    margin: 0 auto;
+    margin: 10% auto;
     width: 440px;
     display: flex;
     justify-content: center;
@@ -23,10 +23,9 @@ h2 {
     width: 250px;
     height: 250px;
     border-radius: 150px;
-    background-color: black;
+    background-color: rgb(44, 44, 44);
     position: relative;
     top:  -340px;
-    box-shadow: 0px 0px 20px 5px black;
     color: rgba(255, 255, 255, 0.651);
 }
 
@@ -65,53 +64,53 @@ h2 {
     width: 180px;
     height: 180px;
     margin: 0 auto;
-    background-color: black;
+    background-color: rgb(44, 44, 44);
     border-radius: 0 220px 0 0px;
-    border: 20px solid black;
+    border: 20px solid rgb(44, 44, 44);
 }
 
 .game-btn-1 {
     border-radius: 220px 0px 0px 0px;
     background-color: green;
-    box-shadow: inset 2px 2px 10px 5px rgb(0, 26, 0), inset 20px 20px 30px rgb(0, 180, 0), 2px 2px 20px 2px black;
+    box-shadow:  inset 20px 20px 30px rgb(0, 180, 0), 2px 2px 20px 2px rgb(44, 44, 44);
 } 
 
 .game-btn-2 {
     background-color: rgb(128, 0, 0);
-    box-shadow: inset -2px 2px 10px 5px rgb(26, 0, 0), inset -20px 20px 30px rgb(179, 0, 0), 2px 2px 20px 2px black;
+    box-shadow:  inset -20px 20px 30px rgb(179, 0, 0), 2px 2px 20px 2px rgb(44, 44, 44);
 } 
 
 .game-btn-3 {
     border-radius: 0px 0px 0px 220px;
     background-color: rgb(175, 143, 0);
-    box-shadow: inset 2px 2px 10px 5px rgb(26, 16, 0), inset 20px -20px 30px rgb(207, 169, 0), 2px 2px 20px 2px black; 
+    box-shadow: inset 20px -20px 30px rgb(207, 169, 0), 2px 2px 20px 2px rgb(44, 44, 44); 
 }
 
 .game-btn-4 {
     border-radius: 0px 0px 220px 0px;
-    background-color: rgb(15, 15, 105);
-    box-shadow: inset 2px 2px 10px 5px rgb(0, 7, 26), inset -20px -20px 30px rgb(4, 28, 133), 2px 2px 20px 2px black;
+    background-color: rgb(0, 29, 109);
+    box-shadow:  inset -20px -20px 30px rgb(4, 28, 133), 2px 2px 20px 2px rgb(44, 44, 44);
 }
 
 .game-btn-1-active:active, .light-up-1 {
     background-color: rgb(0, 255, 0);
-    box-shadow: inset 2px 2px 10px 5px rgb(0, 95, 0), inset 20px 20px 30px rgb(93, 255, 93), 2px 2px 20px 2px black;
+    box-shadow:  inset 20px 20px 30px rgb(93, 255, 93), 2px 2px 20px 2px rgb(44, 44, 44);
 }
 
 .game-btn-2-active:active, .light-up-2 {
     background-color: rgb(255, 0, 0);
-    box-shadow: inset -2px 2px 10px 5px rgb(26, 0, 0), inset -20px 20px 30px rgb(255, 31, 31), 2px 2px 20px 2px black;
+    box-shadow:  inset -20px 20px 30px rgb(255, 99, 99), 2px 2px 20px 2px rgb(44, 44, 44);
 } 
 
 .game-btn-3-active:active, .light-up-3 {
     border-radius: 0px 0px 0px 220px;
     background-color: rgb(255, 239, 22);
-    box-shadow: inset 2px 2px 10px 5px rgb(49, 26, 0), inset 20px -20px 30px rgb(252, 255, 76), 2px 2px 20px 2px black; 
+    box-shadow:  inset 20px -20px 30px rgb(252, 255, 76), 2px 2px 20px 2px rgb(44, 44, 44); 
 }
 
 .game-btn-4-active:active, .light-up-4 {
     border-radius: 0px 0px 220px 0px;
     background-color: rgb(21, 56, 255);
-    box-shadow: inset 2px 2px 10px 5px rgb(0, 20, 75), inset -20px -20px 30px rgb(78, 110, 255), 2px 2px 20px 2px black;
+    box-shadow:  inset -20px -20px 30px rgb(78, 110, 255), 2px 2px 20px 2px rgb(44, 44, 44);
 }
 
