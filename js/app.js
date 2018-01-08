@@ -147,10 +147,21 @@ app.game = {
 
     testGameConditions: function(){
         var that = this;
+        //lose condition
         if(!this.sequenceCorrect()){
             window.clearTimeout(this.correctSeqTimeout);
             this.playerFailed();
+            return 'failed';
         }
+        //win game condition)
+        if(this.playerSequence.length === app.const.END_GAME_SCORE){
+            if((this.playerSequence.length === this.compSequence.length)
+            && (this.sequenceCorrect())){
+                this.gameWin();
+                return 'win';
+            }
+        }
+        //win stage condition
         if((this.playerSequence.length === this.compSequence.length)
         && (this.sequenceCorrect())){
             //sequence are the same 
@@ -161,28 +172,48 @@ app.game = {
                 app.viewModel.incrementCounter();
                 that.gameStep();
             },1000);
+            return 'next stage';
         }
+        
     },
 
     playerFailed : function(){
         var tempCounter,
             that = this;
-
-        if(app.viewModel.playerTurn()){
-            if(app.viewModel.strict()){
-                //strict
-                this.start();
-            }else{
-                tempCounter = +app.viewModel.counter();
-                app.viewModel.counter('!!!!');
-                app.viewModel.playerTurn(false);
-                this.resetTimer();
-                window.setTimeout( function(){
-                    app.viewModel.counter(tempCounter);
-                    that.playSequence();
-                },1500);
-            }
+        app.sound.playBuzz();
+        if(app.viewModel.strict()){
+            //strict
+            app.viewModel.counter('!!!!');
+            app.viewModel.playerTurn(false);
+            this.resetTimer();
+            window.setTimeout( function(){
+                app.viewModel.counter('1');
+                that.start();
+            },1500);
+                
+        }else{
+            tempCounter = +app.viewModel.counter();
+            app.viewModel.counter('!!!!');
+            app.viewModel.playerTurn(false);
+            this.resetTimer();
+            window.setTimeout( function(){
+                app.viewModel.counter(tempCounter);
+                that.playSequence();
+            },1500);
         }
+        
+    },
+
+    gameWin : function(){
+        var that = this;
+        app.viewModel.playerTurn(false);
+        window.clearTimeout(this.correctSeqTimeout);
+        app.viewModel.counter('WIN');
+        app.sound.playFunfare();
+        window.setTimeout( function(){
+            that.reset();
+            app.viewModel.counter('----');
+        },1500);
     },
 
     gameStep : function(){
@@ -205,6 +236,15 @@ app.game = {
         var playerTimeOut = this.playerTimeOut.bind(this);
         this.interval = window.setInterval( playerTimeOut, 200 );
     },
+
+    powerOn : function(){
+        app.viewModel.counter('----');
+    },
+
+    powerOff : function(){
+        this.reset();
+        app.viewModel.counter('OFF');
+    }
 };
 
 $(function(){

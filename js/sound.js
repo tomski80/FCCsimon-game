@@ -23,5 +23,17 @@ app.sound = {
         default:
             break;
         }
+    },
+
+    playFunfare : function(){
+        var funfare = new Audio('data/Fanfare-sound.mp3');
+        funfare.play();
+    },
+
+    playBuzz : function(){
+        var soundTwo = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+        var soundFour = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+        soundTwo.play();
+        soundFour.play();
     }
 };

@@ -4,6 +4,7 @@ var app = app || {};
 app.const = {};
 
 app.const.TIME_LIMIT = 5000;
+app.const.END_GAME_SCORE = 5;
 
 app.helper = {};
 

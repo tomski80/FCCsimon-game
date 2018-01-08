@@ -28,6 +28,11 @@ app.viewModel = {
 
     toggleOnOff : function(){
         this.deviceOn(!this.deviceOn());
+        if(this.deviceOn()){
+            app.game.powerOn();
+        }else{
+            app.game.powerOff();
+        }
     },
 
     colorBtnPressed : function(color){
@@ -64,5 +69,6 @@ app.viewModel = {
         app.viewModel.counter(counter);
         app.game.speedUp();
     }
+
 };
 

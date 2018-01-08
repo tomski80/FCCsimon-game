@@ -34,9 +34,11 @@
                     <spam><h2>SIMON</h2></spam>
                     <input class='game-score' type='text' readonly=true data-bind="attr: { value : counter }">
                     <button id='start' data-bind="click: restart">start</button>
-                    <button class="btn-power" data-bind="click: toggleOnOff, text: deviceOn() ? 'ON' : 'OFF'"></button>
-                    <label>Strict mode</label>
-                    <input id='strict' type='checkbox' name='strict'>
+                    <button class="btn-power" data-bind="click: toggleOnOff, text: deviceOn() ? 'OFF' : 'ON'"></button>
+                    <label class="strict-label">Strict mode</label>
+                    <div class="checkbox-strict" data-bind="css: { 'checkbox-strict-checked' : strict}">
+                    <input id='strict' type='checkbox' name='strict' data-bind="checked: strict">
+                    </div>
                 </div>
             </div>
             
